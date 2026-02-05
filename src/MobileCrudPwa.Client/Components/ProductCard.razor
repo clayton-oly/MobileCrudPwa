@@ -1,0 +1,14 @@
+﻿<div class="card m-2" style="width:16rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Product.Nome</h5>
+        <p class="card-text">
+            Preço:@Product.Preco
+        </p>
+
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProdutoDTO Product { get; set; } = default!;
+}

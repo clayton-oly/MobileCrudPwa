@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 //dbContext com sqlite
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var cs = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=wasmmp2.db";
+    var cs = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=mobileCrudPwa.db";
     options.UseSqlite(cs);
 });
 
@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: corsPolicyName, policy =>
     {
         //ajustar as URLs conforme a porta Client
-        policy.WithOrigins("http://localhost:5148", "https://localhost:7008").AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("http://localhost:5068", "https://localhost:7060").AllowAnyHeader().AllowAnyMethod();
     });
 });
 
