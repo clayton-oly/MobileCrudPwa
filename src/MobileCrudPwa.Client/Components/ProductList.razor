@@ -19,7 +19,7 @@ else
     <div class="d-flex flex-wrap">
         @foreach (var p in products)
         {
-            <ProductCard Product="p"></ProductCard>
+            <h1>@p.Nome</h1>
         }
     </div>
 }
@@ -33,7 +33,7 @@ else
         {
             //usando apenas caminho relativo
             products = await http.GetFromJsonAsync<List<ProdutoDTO>>("api/products");
-           
+
         }
         catch (Exception ex)
         {
