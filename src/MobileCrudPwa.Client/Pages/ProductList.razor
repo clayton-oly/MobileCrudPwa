@@ -15,12 +15,27 @@ else if (products is null)
 }
 else
 {
-    <div class="d-flex flex-wrap">
-        @foreach (var p in products)
-        {
-            <ProductCard Product="p"></ProductCard>
-        }
-    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in products)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Preco.ToString("C")</td>
+                    <td>@produto.Estoque</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 @code {
